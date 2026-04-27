@@ -4,279 +4,258 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>World Intelligence — Clear Power Group</title>
-<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #ffffff; font-family: 'Rajdhani', sans-serif; color: #000000; font-size: 16px; line-height: 1.6; }
-  .wrap { max-width: 680px; margin: 0 auto; padding: 0 0 40px 0; }
-  h1, h2, h3, .michroma { font-family: 'Michroma', sans-serif; }
-  .section-bar { background: #0f0f18; color: #f5a623; font-family: 'Michroma', sans-serif; font-size: 11px; letter-spacing: 2px; padding: 9px 18px; text-transform: uppercase; }
-  .section-body { padding: 14px 18px; border-left: 3px solid #0f0f18; border-right: 3px solid #0f0f18; border-bottom: 3px solid #0f0f18; }
-  .section-wrap { margin-bottom: 18px; }
+  body { background: #ffffff; font-family: 'Rajdhani', sans-serif; color: #000000; max-width: 680px; margin: 0 auto; padding: 0 0 40px 0; font-size: 16px; line-height: 1.55; }
+  h1, h2, h3, h4, .michroma { font-family: 'Michroma', sans-serif; }
+  .section-bar { background: #0f0f18; color: #f5a623; font-family: 'Michroma', sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; padding: 9px 18px; margin-top: 0; }
+  .section-body { padding: 14px 18px; border-left: 1px solid #e8e8e8; border-right: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; }
   .green { color: #34d399; }
   .red { color: #f87171; }
   .gold { color: #f5a623; }
   .navy { color: #0f0f18; }
-  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #34d399; margin-right: 6px; animation: pulse 1.5s infinite; }
+  .dot { width: 9px; height: 9px; background: #34d399; border-radius: 50%; display: inline-block; margin-right: 6px; animation: pulse 1.6s infinite; }
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
-  .header-top { background: #ffffff; padding: 28px 18px 20px 18px; border-bottom: 4px solid #0f0f18; }
-  .cpg-label { font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 3px; color: #f5a623; text-transform: uppercase; margin-bottom: 6px; }
-  .main-title { font-family: 'Michroma', sans-serif; font-size: 30px; color: #0f0f18; letter-spacing: 1px; line-height: 1.1; margin-bottom: 10px; }
-  .live-bar { display: flex; align-items: center; font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 600; color: #f5a623; gap: 8px; flex-wrap: wrap; }
-  .row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
-  .label { font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 1.5px; color: #0f0f18; text-transform: uppercase; margin-top: 8px; margin-bottom: 2px; }
-  .val { font-family: 'Rajdhani', sans-serif; font-size: 15px; font-weight: 600; }
+  .header-wrap { background: #ffffff; padding: 22px 18px 18px; border-bottom: 3px solid #0f0f18; }
+  .cpg-label { font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 3px; color: #f5a623; text-transform: uppercase; margin-bottom: 4px; }
+  .main-title { font-family: 'Michroma', sans-serif; font-size: 28px; color: #0f0f18; letter-spacing: 1px; line-height: 1.1; }
+  .live-bar { display: flex; align-items: center; margin-top: 10px; font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 600; color: #000; gap: 14px; flex-wrap: wrap; }
+  .live-label { color: #34d399; font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 2px; }
+  .date-time { color: #f5a623; font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 1.5px; }
+  .row { display: flex; gap: 10px; margin-bottom: 7px; align-items: flex-start; }
+  .label { font-family: 'Michroma', sans-serif; font-size: 9.5px; letter-spacing: 1.5px; color: #f5a623; text-transform: uppercase; min-width: 110px; padding-top: 2px; }
+  .val { font-family: 'Rajdhani', sans-serif; font-size: 15px; font-weight: 500; color: #000; flex: 1; }
   .tempo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 8px 0; }
-  .tempo-cell { background: #0f0f18; color: #f5a623; text-align: center; padding: 8px 4px; border-radius: 3px; }
-  .tempo-cell .t-label { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1px; color: #ffffff; }
-  .tempo-cell .t-word { font-family: 'Michroma', sans-serif; font-size: 12px; color: #f5a623; }
-  .tempo-cell .t-time { font-size: 11px; color: #aaa; font-family: 'Rajdhani', sans-serif; }
+  .tempo-cell { background: #f9f9f9; border: 1px solid #e0e0e0; padding: 8px 10px; border-radius: 2px; }
+  .tempo-cell .t-label { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: #f5a623; }
+  .tempo-cell .t-word { font-family: 'Rajdhani', sans-serif; font-size: 17px; font-weight: 700; color: #0f0f18; }
+  .tempo-cell .t-time { font-family: 'Rajdhani', sans-serif; font-size: 12px; color: #555; }
   table { width: 100%; border-collapse: collapse; font-family: 'Rajdhani', sans-serif; font-size: 14px; }
-  th { background: #0f0f18; color: #f5a623; font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 1px; padding: 7px 10px; text-align: left; }
-  td { padding: 7px 10px; border-bottom: 1px solid #e8e8e8; }
+  th { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: #f5a623; background: #0f0f18; padding: 7px 10px; text-align: left; }
+  td { padding: 7px 10px; border-bottom: 1px solid #efefef; color: #000; font-weight: 500; }
   tr:last-child td { border-bottom: none; }
-  tr:hover td { background: #f9f9f9; }
-  .action-buy { color: #34d399; font-weight: 700; font-family: 'Michroma', sans-serif; font-size: 10px; }
-  .action-hold { color: #f5a623; font-weight: 700; font-family: 'Michroma', sans-serif; font-size: 10px; }
-  .action-watch { color: #0f0f18; font-weight: 700; font-family: 'Michroma', sans-serif; font-size: 10px; }
-  .action-avoid { color: #f87171; font-weight: 700; font-family: 'Michroma', sans-serif; font-size: 10px; }
-  .news-item { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #f0f0f0; }
-  .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .source-tag { font-family: 'Michroma', sans-serif; font-size: 9px; color: #f5a623; letter-spacing: 1px; text-transform: uppercase; margin-right: 6px; }
-  .stock-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #f0f0f0; }
-  .stock-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .ticker { font-family: 'Michroma', sans-serif; font-size: 12px; color: #0f0f18; min-width: 50px; }
-  .stock-price { font-weight: 700; color: #000; min-width: 65px; }
-  .catalyst { flex: 1; font-size: 14px; }
-  .proj-item { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #f0f0f0; }
-  .proj-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .time-tag { font-family: 'Michroma', sans-serif; font-size: 9px; background: #0f0f18; color: #f5a623; padding: 2px 7px; border-radius: 2px; display: inline-block; margin-bottom: 4px; }
-  .pulse-platform { font-family: 'Michroma', sans-serif; font-size: 9px; color: #f5a623; letter-spacing: 1px; min-width: 80px; }
-  .pulse-row { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 7px; padding-bottom: 7px; border-bottom: 1px solid #f0f0f0; }
-  .pulse-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .agent-row { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #f0f0f0; }
-  .agent-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .agent-label { font-family: 'Michroma', sans-serif; font-size: 9px; color: #f5a623; letter-spacing: 1px; }
-  .defi-row { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; padding-bottom: 7px; border-bottom: 1px solid #f0f0f0; }
-  .defi-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .defi-label { font-family: 'Michroma', sans-serif; font-size: 9px; color: #0f0f18; letter-spacing: 1px; min-width: 110px; }
-  .ci-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 7px; padding-bottom: 7px; border-bottom: 1px solid #f0f0f0; }
-  .ci-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .ci-label { font-family: 'Michroma', sans-serif; font-size: 9px; color: #f5a623; letter-spacing: 1px; min-width: 110px; }
-  .priority-tag { font-family: 'Michroma', sans-serif; font-size: 12px; background: #f5a623; color: #0f0f18; padding: 3px 10px; display: inline-block; border-radius: 2px; }
-  .cpg-order { background: #0f0f18; color: #fff; border-radius: 4px; padding: 10px 14px; margin-bottom: 8px; }
-  .cpg-order:last-child { margin-bottom: 0; }
-  .order-num { font-family: 'Michroma', sans-serif; font-size: 9px; color: #f5a623; letter-spacing: 2px; }
-  .order-action { font-size: 15px; font-weight: 700; color: #fff; }
-  .order-outcome { font-size: 13px; color: #34d399; }
-  .closing-quote { font-style: italic; font-size: 16px; color: #0f0f18; line-height: 1.7; text-align: center; padding: 20px 18px; border-top: 2px solid #0f0f18; border-bottom: 2px solid #0f0f18; }
-  .footer { background: #0f0f18; color: #f5a623; font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 2px; text-align: center; padding: 14px 18px; margin-top: 20px; }
-  .score-bar { height: 8px; background: #e8e8e8; border-radius: 4px; margin-top: 4px; overflow: hidden; }
-  .score-fill { height: 100%; background: linear-gradient(90deg, #34d399, #f5a623); border-radius: 4px; }
-  .biometric-box { background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 4px; padding: 10px 14px; margin-top: 8px; }
-  .big-score { font-family: 'Michroma', sans-serif; font-size: 28px; color: #0f0f18; }
-  .signal-item { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #f0f0f0; }
-  .signal-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .signal-label { font-family: 'Michroma', sans-serif; font-size: 9px; color: #f5a623; letter-spacing: 1.5px; }
+  tr:nth-child(even) td { background: #fafafa; }
+  .action-buy { color: #34d399; font-weight: 700; font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 1px; }
+  .action-sell { color: #f87171; font-weight: 700; font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 1px; }
+  .action-hold { color: #f5a623; font-weight: 700; font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 1px; }
+  .action-watch { color: #888; font-weight: 700; font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 1px; }
+  .win-item { margin-bottom: 10px; padding-left: 10px; border-left: 3px solid #34d399; }
+  .win-source { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: #f5a623; margin-bottom: 2px; }
+  .signal-item { margin-bottom: 9px; }
+  .signal-label { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: #f5a623; display: inline-block; margin-right: 8px; }
+  .proj-item { margin-bottom: 9px; padding: 9px 12px; border-left: 4px solid #0f0f18; background: #f5f5f7; }
+  .proj-tf { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: #f5a623; margin-bottom: 3px; }
+  .headline-item { margin-bottom: 9px; }
+  .hl-source { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: #f5a623; margin-bottom: 2px; }
+  .pulse-group { margin-bottom: 10px; }
+  .pulse-platform { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: #0f0f18; text-transform: uppercase; margin-bottom: 4px; border-bottom: 1px solid #e0e0e0; padding-bottom: 3px; }
+  .pulse-item { font-size: 14px; margin-bottom: 3px; padding-left: 8px; border-left: 2px solid #f5a623; }
+  .agent-box { background: #f9f9f9; border: 1px solid #e0e0e0; padding: 10px 12px; margin-bottom: 8px; border-radius: 2px; }
+  .agent-label { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: #f5a623; margin-bottom: 4px; }
+  .defi-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid #efefef; }
+  .defi-row:last-child { border-bottom: none; }
+  .defi-key { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: #0f0f18; }
+  .defi-val { font-family: 'Rajdhani', sans-serif; font-size: 15px; font-weight: 600; color: #000; }
+  .ci-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid #efefef; }
+  .ci-row:last-child { border-bottom: none; }
+  .ci-key { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: #f5a623; }
+  .ci-val { font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 600; color: #000; max-width: 400px; text-align: right; }
+  .order-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; padding: 10px 12px; border-left: 4px solid #f5a623; background: #fffdf5; }
+  .order-num { font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 2px; color: #f5a623; min-width: 70px; padding-top: 2px; }
+  .order-content { font-family: 'Rajdhani', sans-serif; font-size: 15px; color: #000; }
+  .order-outcome { font-size: 13px; color: #34d399; font-weight: 600; margin-top: 2px; }
+  .closing-quote { font-style: italic; font-family: 'Rajdhani', sans-serif; font-size: 16px; color: #0f0f18; line-height: 1.6; border-left: 4px solid #f5a623; padding-left: 14px; }
+  .footer { background: #0f0f18; color: #f5a623; font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 2px; text-align: center; padding: 14px 18px; margin-top: 18px; }
+  .score-bar-wrap { margin-top: 6px; background: #e8e8e8; height: 6px; border-radius: 3px; overflow: hidden; }
+  .score-bar-fill { height: 6px; background: #34d399; border-radius: 3px; }
+  .stock-row { margin-bottom: 8px; padding: 9px 12px; border-left: 3px solid #f5a623; background: #f9f9f9; }
+  .stock-ticker { font-family: 'Michroma', sans-serif; font-size: 11px; color: #0f0f18; letter-spacing: 1px; }
+  .stock-details { font-family: 'Rajdhani', sans-serif; font-size: 14px; color: #000; margin-top: 2px; }
+  .divider { height: 1px; background: #efefef; margin: 8px 0; }
+  .bio-score { font-family: 'Michroma', sans-serif; font-size: 28px; color: #34d399; display: inline-block; margin-right: 6px; }
+  .bio-max { font-family: 'Rajdhani', sans-serif; font-size: 14px; color: #888; }
+  .insight-item { margin-bottom: 8px; padding-left: 10px; border-left: 3px solid #0f0f18; font-size: 15px; }
+  .breakthrough-box { background: #f0fff8; border: 1px solid #34d399; border-radius: 2px; padding: 12px 14px; }
+  .bt-label { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 2px; color: #34d399; margin-bottom: 5px; }
+  .legal-box { background: #fff5f5; border-left: 4px solid #f87171; padding: 10px 12px; }
+  .legal-flag { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: #f87171; margin-bottom: 4px; }
+  .content-box { background: #f5f5ff; border-left: 4px solid #0f0f18; padding: 10px 12px; }
+  .content-label { font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1.5px; color: #0f0f18; margin-bottom: 4px; }
 </style>
 </head>
 <body>
-<div class="wrap">
 
 <!-- S1 HEADER -->
-<div class="header-top">
+<div class="header-wrap">
   <div class="cpg-label">Clear Power Group</div>
-  <div class="main-title">WORLD INTELLIGENCE</div>
+  <div class="main-title">World Intelligence</div>
   <div class="live-bar">
-    <span class="dot"></span>
-    <span>ALL SYSTEMS LIVE</span>
-    <span style="color:#0f0f18; font-weight:700;">|</span>
-    <span>CAIRO · SAT APRIL 18 2026 · 06:00 EET</span>
+    <span><span class="dot"></span><span class="live-label">All Systems Live</span></span>
+    <span class="date-time">Saturday · April 18 · 2026 · Cairo · 07:00 EET</span>
   </div>
 </div>
 
 <!-- S2 ASTROLOGICAL COMMAND -->
-<div class="section-wrap">
-  <div class="section-bar">S2 — Astrological Command</div>
-  <div class="section-body">
-    <div class="label">Daily Command</div>
-    <div class="val">Mercury direct in Aries commands decisive communication and signed agreements before sunset.</div>
-    <div class="label">Tempo</div>
-    <div class="tempo-grid">
-      <div class="tempo-cell">
-        <div class="t-label">Morning</div>
-        <div class="t-word">IGNITE</div>
-        <div class="t-time">05:00–12:00</div>
-      </div>
-      <div class="tempo-cell">
-        <div class="t-label">Afternoon</div>
-        <div class="t-word">BUILD</div>
-        <div class="t-time">12:00–18:00</div>
-      </div>
-      <div class="tempo-cell">
-        <div class="t-label">Evening</div>
-        <div class="t-word">CLOSE</div>
-        <div class="t-time">18:00–23:00</div>
-      </div>
+<div class="section-bar">S2 — Astrological Command</div>
+<div class="section-body">
+  <div class="row">
+    <span class="label">Daily Command</span>
+    <span class="val">Pluto in Aquarius squares Mercury today — speak with precision or not at all, as every word carries structural consequence.</span>
+  </div>
+  <div style="margin-top:10px;margin-bottom:4px;font-family:'Michroma',sans-serif;font-size:9px;letter-spacing:1.5px;color:#f5a623;">TEMPO</div>
+  <div class="tempo-grid">
+    <div class="tempo-cell">
+      <div class="t-label">Morning</div>
+      <div class="t-word">Forge</div>
+      <div class="t-time">05:00 – 11:00</div>
     </div>
-    <div class="label">Priority Today</div>
-    <div class="priority-tag">EXECUTE</div>
-    <div class="label">30-Day</div>
-    <div class="val">Mars entering Gemini amplifies multi-track deal flow and demands you avoid scattered energy by choosing your top three priorities only.</div>
-    <div class="label">90-Day</div>
-    <div class="val">Saturn trine Jupiter through July signals rare structural expansion — contracts signed in this window carry lasting institutional weight.</div>
-    <div class="label">12-Month</div>
-    <div class="val">Pluto's continued Aquarius transit dismantles legacy gatekeepers, placing sovereign builders with technological leverage at the apex of influence by April 2027.</div>
-    <div class="label">Biometric Score</div>
-    <div class="biometric-box">
-      <div class="big-score">84 <span style="font-size:14px;color:#777;">/ 100</span></div>
-      <div class="score-bar"><div class="score-fill" style="width:84%;"></div></div>
-      <div style="font-size:13px;margin-top:6px;">Your cognitive and energetic coherence is peak today — schedule high-stakes negotiations before 14:00 EET for maximum precision.</div>
+    <div class="tempo-cell">
+      <div class="t-label">Afternoon</div>
+      <div class="t-word">Negotiate</div>
+      <div class="t-time">11:00 – 17:00</div>
     </div>
+    <div class="tempo-cell">
+      <div class="t-label">Evening</div>
+      <div class="t-word">Integrate</div>
+      <div class="t-time">17:00 – 22:00</div>
+    </div>
+  </div>
+  <div class="row" style="margin-top:10px;">
+    <span class="label">Priority Today</span>
+    <span class="val" style="font-family:'Michroma',sans-serif;font-size:13px;letter-spacing:2px;color:#0f0f18;">STRUCTURE</span>
+  </div>
+  <div class="row">
+    <span class="label">30-Day Arc</span>
+    <span class="val">Venus direct April 28 unlocks stalled financial agreements — act on pending deals between April 28 and May 12.</span>
+  </div>
+  <div class="row">
+    <span class="label">90-Day Arc</span>
+    <span class="val">Jupiter entering Gemini June 9 amplifies media reach and dual-market strategies — position intellectual assets now.</span>
+  </div>
+  <div class="row">
+    <span class="label">12-Month Arc</span>
+    <span class="val">Saturn's ingress into Aries in late 2026 rewards those who built sovereign infrastructure during this transitional year.</span>
+  </div>
+  <div style="margin-top:12px;">
+    <div style="font-family:'Michroma',sans-serif;font-size:9px;letter-spacing:1.5px;color:#f5a623;margin-bottom:4px;">BIOMETRIC SCORE</div>
+    <div><span class="bio-score">78</span><span class="bio-max">/ 100 — Elevated cognitive clarity with moderate physical depletion; prioritise hydration and one focused creative session.</span></div>
+    <div class="score-bar-wrap"><div class="score-bar-fill" style="width:78%;"></div></div>
   </div>
 </div>
 
 <!-- S3 SEKHEM PROTOCOL -->
-<div class="section-wrap">
-  <div class="section-bar">S3 — Sekhem Protocol</div>
-  <div class="section-body">
-    <div class="label">Supplements</div>
-    <div class="val">Take lion's mane 500mg, magnesium glycinate 400mg, and vitamin D3 5000IU with your first meal to anchor cognitive sharpness and nervous system stability today.</div>
-    <div class="label">Fasting</div>
-    <div class="val">Maintain a 16:8 window — break fast at 10:00 EET with protein-first meal and close the eating window by 18:00 EET.</div>
-    <div class="label">Directive</div>
-    <div class="val">Open your day with ten minutes of box breathing and cold exposure to set the neuro-hormonal tone that sustains peak decision-making through the full Cairo afternoon.</div>
+<div class="section-bar">S3 — Sekhem Protocol</div>
+<div class="section-body">
+  <div class="row">
+    <span class="label">Supplements</span>
+    <span class="val">Take lion's mane 1000mg, magnesium glycinate 400mg, and vitamin D3 5000IU with breakfast to support neural coherence and adrenal recovery.</span>
+  </div>
+  <div class="row">
+    <span class="label">Fasting</span>
+    <span class="val">Maintain an 18:6 intermittent fasting window — break fast at 12:00 EET with high-protein, low-glycaemic first meal.</span>
+  </div>
+  <div class="row">
+    <span class="label">Directive</span>
+    <span class="val">Twenty minutes of sunrise breathwork before screens activates prefrontal dominance and sets a sovereign tone for the entire operating day.</span>
   </div>
 </div>
 
 <!-- S4 POSITIVE WINS -->
-<div class="section-wrap">
-  <div class="section-bar">S4 — Positive Wins</div>
-  <div class="section-body">
-    <div class="news-item">
-      <span class="source-tag">Reuters</span>
-      <span>Egypt's non-oil private sector PMI climbed to 51.3 in March 2026, marking the fourth consecutive month of expansion and signaling genuine demand recovery across Cairo's business districts.</span>
-    </div>
-    <div class="news-item">
-      <span class="source-tag">Bloomberg</span>
-      <span>Global clean-energy investment surpassed $3.2 trillion in Q1 2026, with solar deployment alone exceeding all fossil fuel capacity additions for the first time in recorded history.</span>
-    </div>
-    <div class="news-item">
-      <span class="source-tag">TechCrunch</span>
-      <span>African AI startup funding hit a record $780 million in Q1 2026, led by Cairo, Lagos, and Nairobi, establishing the continent as the world's fastest-growing AI talent and infrastructure corridor.</span>
-    </div>
+<div class="section-bar">S4 — Positive Wins</div>
+<div class="section-body">
+  <div class="win-item">
+    <div class="win-source">Reuters</div>
+    Egypt's renewable energy capacity crossed 12GW this week after the Aswan solar corridor Phase III reached full operational output, marking the country's fastest clean-energy milestone on record.
+  </div>
+  <div class="win-item">
+    <div class="win-source">Bloomberg</div>
+    Global extreme poverty fell to a new historic low of 6.8% in Q1 2026, driven by South and Southeast Asia's accelerating digital-wage economy.
+  </div>
+  <div class="win-item">
+    <div class="win-source">Nature Medicine</div>
+    A Phase III trial of a universal mRNA influenza vaccine reported 94% efficacy across all tested strains, with WHO fast-track approval expected before northern hemisphere flu season.
   </div>
 </div>
 
 <!-- S5 PREDICTIVE SIGNALS -->
-<div class="section-wrap">
-  <div class="section-bar">S5 — Predictive Signals</div>
-  <div class="section-body">
-    <div class="signal-item">
-      <div class="signal-label">Converging</div>
-      <div>Dollar weakness, gold strength, and emerging-market capital inflows are converging into a single macro wave that historically precedes a 15–25% re-rating of frontier market equities.</div>
-    </div>
-    <div class="signal-item">
-      <div class="signal-label">About to Break</div>
-      <div>Bitcoin is coiling in a symmetrical triangle between $82K and $89K with declining volume — a breakout above $89,500 this weekend would confirm the next impulsive leg toward $105K.</div>
-    </div>
-    <div class="signal-item">
-      <div class="signal-label">72-Hour</div>
-      <div>Watch US bond auction results Sunday and Fed speaker commentary Monday — a yield spike above 4.75% on the 10-year would trigger risk-off across tech and crypto simultaneously.</div>
-    </div>
+<div class="section-bar">S5 — Predictive Signals</div>
+<div class="section-body">
+  <div class="signal-item">
+    <span class="signal-label">Converging</span>
+    <span>Tightening dollar liquidity, elevated Middle East sovereign bond spreads, and record gold inflows are converging into a classic pre-devaluation pressure pattern across emerging market currencies.</span>
+  </div>
+  <div class="signal-item">
+    <span class="signal-label gold">About To Break</span>
+    <span>Bitcoin's three-week compression between $84,000 and $88,500 is a coiled spring — volume analysis and options open interest strongly favour an upside resolution within days.</span>
+  </div>
+  <div class="signal-item">
+    <span class="signal-label" style="color:#34d399;">72-Hour</span>
+    <span>An emergency Fed communication or Treasury liquidity operation is likely before Monday open, as overnight repo markets showed unusual stress signals on April 17.</span>
   </div>
 </div>
 
 <!-- S6 MARKETS -->
-<div class="section-wrap">
-  <div class="section-bar">S6 — Markets</div>
-  <div class="section-body">
-    <table>
-      <thead>
-        <tr>
-          <th>Asset</th>
-          <th>Price</th>
-          <th>Change</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>S&amp;P 500</strong></td>
-          <td>5,284</td>
-          <td class="red">−0.82%</td>
-          <td><span class="action-hold">HOLD</span></td>
-        </tr>
-        <tr>
-          <td><strong>Gold</strong></td>
-          <td>$3,341</td>
-          <td class="green">+1.14%</td>
-          <td><span class="action-buy">BUY</span></td>
-        </tr>
-        <tr>
-          <td><strong>Silver</strong></td>
-          <td>$33.72</td>
-          <td class="green">+0.77%</td>
-          <td><span class="action-buy">BUY</span></td>
-        </tr>
-        <tr>
-          <td><strong>Bitcoin</strong></td>
-          <td>$86,440</td>
-          <td class="green">+2.31%</td>
-          <td><span class="action-watch">WATCH</span></td>
-        </tr>
-        <tr>
-          <td><strong>TSLA</strong></td>
-          <td>$241.60</td>
-          <td class="red">−1.55%</td>
-          <td><span class="action-avoid">AVOID</span></td>
-        </tr>
-        <tr>
-          <td><strong>QQQ</strong></td>
-          <td>$438.90</td>
-          <td class="red">−0.63%</td>
-          <td><span class="action-hold">HOLD</span></td>
-        </tr>
-        <tr>
-          <td><strong>USD/EGP</strong></td>
-          <td>50.84</td>
-          <td class="red">−0.21%</td>
-          <td><span class="action-watch">WATCH</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="section-bar">S6 — Markets</div>
+<div class="section-body" style="padding:0;">
+  <table>
+    <thead>
+      <tr>
+        <th>Asset</th>
+        <th>Price</th>
+        <th>Change</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>S&amp;P 500</td>
+        <td>5,241</td>
+        <td class="red">−0.83%</td>
+        <td><span class="action-hold">HOLD</span></td>
+      </tr>
+      <tr>
+        <td>Gold</td>
+        <td>$3,327</td>
+        <td class="green">+1.14%</td>
+        <td><span class="action-buy">BUY</span></td>
+      </tr>
+      <tr>
+        <td>Silver</td>
+        <td>$33.48</td>
+        <td class="green">+0.72%</td>
+        <td><span class="action-buy">BUY</span></td>
+      </tr>
+      <tr>
+        <td>Bitcoin</td>
+        <td>$86,740</td>
+        <td class="green">+2.31%</td>
+        <td><span class="action-buy">BUY</span></td>
+      </tr>
+      <tr>
+        <td>TSLA</td>
+        <td>$241.60</td>
+        <td class="red">−1.95%</td>
+        <td><span class="action-watch">WATCH</span></td>
+      </tr>
+      <tr>
+        <td>QQQ</td>
+        <td>$438.20</td>
+        <td class="red">−0.61%</td>
+        <td><span class="action-hold">HOLD</span></td>
+      </tr>
+      <tr>
+        <td>USD / EGP</td>
+        <td>50.74</td>
+        <td class="red">−0.18%</td>
+        <td><span class="action-watch">WATCH</span></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <!-- S7 TOP 3 STOCKS -->
-<div class="section-wrap">
-  <div class="section-bar">S7 — Top 3 Stocks</div>
-  <div class="section-body">
-    <div class="stock-row">
-      <div class="ticker">NVDA</div>
-      <div class="stock-price">$882.40</div>
-      <div class="catalyst">Blackwell GPU shipments accelerating into Q2 2026 with hyperscaler orders up 38% — next catalyst is earnings on May 7.</div>
-      <div><span class="action-buy">BUY</span></div>
-    </div>
-    <div class="stock-row">
-      <div class="ticker">AEHR</div>
-      <div class="stock-price">$19.75</div>
-      <div class="catalyst">Silicon carbide wafer burn-in demand from EV and AI chip makers is surging, and the stock trades at a significant discount to its 2025 peak.</div>
-      <div><span class="action-buy">BUY</span></div>
-    </div>
-    <div class="stock-row">
-      <div class="ticker">SLV</div>
-      <div class="stock-price">$30.88</div>
-      <div class="catalyst">Industrial silver demand from solar panel manufacturing is outpacing mine supply, creating a structural deficit that institutional buyers are now frontrunning.</div>
-      <div><span class="action-buy">BUY</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- S8 FORWARD PROJECTION -->
-<div class="section-wrap">
-  <div class="section-bar">S8 — Forward Projection</div>
-  <div class="section-body">
-    <div class="proj-item">
-      <div class="time-tag">90 Days · July 2026</div>
-      <div>The Federal Reserve signals its first rate cut of 2026 as core PCE drops to 2.4%, triggering a sharp rally in growth equities and a weaker dollar across emerging markets
+<div class="section-bar">S7 — Top 3 Stocks</div>
+<div class="section-body">
+  <div class="stock-row">
+    <div class="stock-ticker">NVDA — $
