@@ -6,279 +6,269 @@
 <title>World Intelligence — Clear Power Group</title>
 <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #ffffff; font-family: 'Rajdhani', sans-serif; color: #000000; font-size: 16px; line-height: 1.6; }
-.container { max-width: 680px; margin: 0 auto; padding: 0 16px 40px; }
-h1, h2, h3, .michroma { font-family: 'Michroma', sans-serif; }
-.section-bar { background: #0f0f18; color: #f5a623; font-family: 'Michroma', sans-serif; font-size: 11px; letter-spacing: 2px; padding: 8px 14px; margin: 18px 0 0 0; text-transform: uppercase; }
-.section-body { border: 1px solid #e8e8e8; border-top: none; padding: 14px; }
-.gold { color: #f5a623; font-weight: 700; }
-.green { color: #34d399; font-weight: 700; }
-.red { color: #f87171; font-weight: 700; }
-.navy { color: #0f0f18; }
-.dot { display: inline-block; width: 9px; height: 9px; background: #34d399; border-radius: 50%; margin-right: 6px; animation: pulse 1.5s infinite; }
-@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
-.header-top { text-align: center; padding: 28px 16px 20px; border-bottom: 3px solid #0f0f18; }
-.brand-small { font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 3px; color: #f5a623; margin-bottom: 6px; }
-.brand-large { font-family: 'Michroma', sans-serif; font-size: 28px; color: #0f0f18; letter-spacing: 2px; line-height: 1.1; margin-bottom: 10px; }
-.live-bar { font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 600; color: #000; }
-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-th { background: #0f0f18; color: #f5a623; font-family: 'Michroma', sans-serif; font-size: 10px; padding: 7px 8px; text-align: left; letter-spacing: 1px; }
-td { padding: 7px 8px; border-bottom: 1px solid #f0f0f0; font-weight: 500; }
-tr:last-child td { border-bottom: none; }
-.row-label { font-family: 'Michroma', sans-serif; font-size: 10px; color: #0f0f18; letter-spacing: 1px; margin-bottom: 2px; }
-.item-block { margin-bottom: 10px; }
-.item-block:last-child { margin-bottom: 0; }
-.source-tag { font-family: 'Michroma', sans-serif; font-size: 9px; color: #f5a623; letter-spacing: 1px; margin-right: 6px; }
-.tempo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 4px; }
-.tempo-cell { background: #0f0f18; color: #f5a623; text-align: center; padding: 8px 4px; font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 1px; }
-.tempo-word { font-size: 13px; color: #ffffff; display: block; font-family: 'Rajdhani', sans-serif; font-weight: 700; margin-top: 2px; }
-.score-bar-outer { background: #e8e8e8; height: 8px; border-radius: 4px; margin-top: 4px; }
-.score-bar-inner { background: #34d399; height: 8px; border-radius: 4px; width: 82%; }
-.order-block { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
-.order-num { font-family: 'Michroma', sans-serif; font-size: 10px; background: #0f0f18; color: #f5a623; padding: 3px 7px; min-width: 62px; text-align: center; letter-spacing: 1px; }
-.order-text { font-size: 14px; font-weight: 600; }
-.closing-section { background: #0f0f18; padding: 20px; margin-top: 18px; text-align: center; }
-.closing-quote { font-family: 'Rajdhani', sans-serif; font-style: italic; color: #f5a623; font-size: 16px; font-weight: 500; line-height: 1.5; }
-.footer-bar { background: #f5a623; color: #0f0f18; font-family: 'Michroma', sans-serif; font-size: 9px; letter-spacing: 2px; padding: 8px; text-align: center; }
-.signal-label { font-family: 'Michroma', sans-serif; font-size: 9px; color: #0f0f18; letter-spacing: 1px; display: block; margin-bottom: 1px; }
-.divider { border: none; border-top: 1px solid #e8e8e8; margin: 8px 0; }
-.tag-inline { font-family: 'Michroma', sans-serif; font-size: 9px; background: #0f0f18; color: #f5a623; padding: 1px 5px; letter-spacing: 1px; margin-right: 5px; display: inline-block; }
-.agent-status { display: inline-block; background: #34d399; color: #0f0f18; font-family: 'Michroma', sans-serif; font-size: 9px; padding: 2px 6px; letter-spacing: 1px; margin-right: 6px; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #ffffff; font-family: 'Rajdhani', sans-serif; color: #000000; font-size: 16px; line-height: 1.6; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 0 40px 0; }
+  h1, h2, h3, .michroma { font-family: 'Michroma', sans-serif; }
+  .section-bar { background: #0f0f18; color: #f5a623; font-family: 'Michroma', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 10px 18px; margin-top: 6px; }
+  .section-body { padding: 14px 18px; border-left: 2px solid #0f0f18; border-right: 2px solid #0f0f18; border-bottom: 2px solid #0f0f18; }
+  .green { color: #34d399; }
+  .red { color: #f87171; }
+  .gold { color: #f5a623; }
+  .navy { color: #0f0f18; }
+  .dot { display: inline-block; width: 9px; height: 9px; background: #34d399; border-radius: 50%; margin-right: 6px; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .header-wrap { background: #ffffff; padding: 28px 18px 18px; border-bottom: 3px solid #0f0f18; }
+  .cpg-label { font-family: 'Michroma', sans-serif; font-size: 10px; color: #f5a623; letter-spacing: 3px; margin-bottom: 4px; }
+  .wi-title { font-family: 'Michroma', sans-serif; font-size: 32px; color: #0f0f18; line-height: 1.1; margin-bottom: 10px; }
+  .live-bar { display: flex; align-items: center; font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 600; gap: 12px; flex-wrap: wrap; }
+  .live-bar .gold { font-weight: 700; }
+  .row { display: flex; gap: 10px; margin-bottom: 6px; flex-wrap: wrap; }
+  .label { font-family: 'Michroma', sans-serif; font-size: 10px; color: #f5a623; letter-spacing: 1px; min-width: 110px; }
+  .val { font-family: 'Rajdhani', sans-serif; font-size: 15px; font-weight: 600; color: #000; }
+  .tempo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  .tempo-cell { background: #f5f5f5; padding: 8px 10px; border-left: 3px solid #f5a623; }
+  .tempo-cell .t-label { font-family: 'Michroma', sans-serif; font-size: 9px; color: #f5a623; letter-spacing: 1px; }
+  .tempo-cell .t-word { font-family: 'Rajdhani', sans-serif; font-size: 17px; font-weight: 700; color: #0f0f18; }
+  .tempo-cell .t-time { font-size: 12px; color: #555; font-weight: 500; }
+  table { width: 100%; border-collapse: collapse; font-family: 'Rajdhani', sans-serif; font-size: 14px; }
+  th { background: #0f0f18; color: #f5a623; font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 1px; padding: 7px 8px; text-align: left; }
+  td { padding: 7px 8px; border-bottom: 1px solid #e8e8e8; font-weight: 500; }
+  tr:nth-child(even) td { background: #fafafa; }
+  .action-buy { color: #34d399; font-weight: 700; }
+  .action-sell { color: #f87171; font-weight: 700; }
+  .action-hold { color: #f5a623; font-weight: 700; }
+  .action-watch { color: #0f0f18; font-weight: 700; }
+  .win-item { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #e0e0e0; }
+  .win-item:last-child { border-bottom: none; margin-bottom: 0; }
+  .win-source { font-family: 'Michroma', sans-serif; font-size: 10px; color: #f5a623; letter-spacing: 1px; }
+  .win-text { font-size: 15px; font-weight: 600; }
+  .signal-label { font-family: 'Michroma', sans-serif; font-size: 10px; color: #f5a623; letter-spacing: 1px; }
+  .signal-text { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+  .proj-item { margin-bottom: 10px; padding: 10px; background: #fafafa; border-left: 3px solid #0f0f18; }
+  .proj-time { font-family: 'Michroma', sans-serif; font-size: 10px; color: #f5a623; letter-spacing: 1px; margin-bottom: 2px; }
+  .proj-text { font-size: 15px; font-weight: 600; }
+  .social-col { margin-bottom: 8px; }
+  .social-platform { font-family: 'Michroma', sans-serif; font-size: 10px; color: #f5a623; letter-spacing: 1px; margin-bottom: 4px; }
+  .social-item { font-size: 14px; font-weight: 500; padding: 3px 0; border-bottom: 1px dotted #eee; }
+  .agent-box { background: #fafafa; border-left: 3px solid #f5a623; padding: 10px 12px; margin-bottom: 6px; }
+  .agent-status { font-family: 'Michroma', sans-serif; font-size: 10px; color: #34d399; letter-spacing: 1px; margin-bottom: 3px; }
+  .defi-row { display: flex; align-items: center; padding: 7px 0; border-bottom: 1px solid #eee; }
+  .defi-label { font-family: 'Michroma', sans-serif; font-size: 10px; color: #f5a623; letter-spacing: 1px; min-width: 130px; }
+  .defi-val { font-size: 15px; font-weight: 600; }
+  .order-item { display: flex; gap: 12px; align-items: flex-start; padding: 10px; background: #fafafa; border-left: 3px solid #f5a623; margin-bottom: 8px; }
+  .order-num { font-family: 'Michroma', sans-serif; font-size: 11px; color: #f5a623; min-width: 70px; padding-top: 2px; }
+  .order-content .order-action { font-size: 15px; font-weight: 700; color: #0f0f18; }
+  .order-content .order-outcome { font-size: 13px; font-weight: 500; color: #555; }
+  .closing-quote { font-style: italic; font-size: 16px; font-weight: 500; color: #0f0f18; text-align: center; padding: 22px 18px; border: 1px solid #e0e0e0; margin: 6px 0; line-height: 1.7; }
+  .footer { background: #0f0f18; color: #f5a623; font-family: 'Michroma', sans-serif; font-size: 10px; letter-spacing: 2px; text-align: center; padding: 16px 18px; margin-top: 6px; }
+  .stock-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px dashed #eee; }
+  .stock-ticker { font-family: 'Michroma', sans-serif; font-size: 12px; color: #0f0f18; }
+  .stock-price { font-size: 15px; font-weight: 700; }
+  .stock-catalyst { font-size: 13px; color: #444; font-weight: 500; flex: 1; padding: 0 12px; }
+  .ci-row { display: flex; align-items: center; padding: 7px 0; border-bottom: 1px solid #eee; }
+  .ci-label { font-family: 'Michroma', sans-serif; font-size: 10px; color: #f5a623; letter-spacing: 1px; min-width: 130px; }
+  .ci-val { font-size: 15px; font-weight: 600; }
+  .bio-score { font-size: 36px; font-family: 'Michroma', sans-serif; color: #0f0f18; }
+  .bio-sub { font-size: 13px; color: #555; font-weight: 500; }
 </style>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
 
 <!-- S1 HEADER -->
-<div class="header-top">
-  <div class="brand-small">Clear Power Group</div>
-  <div class="brand-large">WORLD INTELLIGENCE</div>
-  <div class="live-bar"><span class="dot"></span><span class="green">ALL SYSTEMS LIVE</span> &nbsp;|&nbsp; <span class="gold">April 18, 2026 &nbsp;·&nbsp; Cairo &nbsp;·&nbsp; 06:00 EET</span></div>
+<div class="header-wrap">
+  <div class="cpg-label">CLEAR POWER GROUP</div>
+  <div class="wi-title">WORLD INTELLIGENCE</div>
+  <div class="live-bar">
+    <span><span class="dot"></span><span class="green" style="font-family:'Michroma',sans-serif;font-size:10px;letter-spacing:2px;">ALL SYSTEMS LIVE</span></span>
+    <span class="gold" style="font-family:'Michroma',sans-serif;font-size:11px;">SATURDAY, APRIL 18, 2026 — CAIRO, EGYPT — 07:00 EET</span>
+  </div>
 </div>
 
 <!-- S2 ASTROLOGICAL COMMAND -->
-<div class="section-bar">S2 — Astrological Command</div>
+<div class="section-bar">S2 — ASTROLOGICAL COMMAND</div>
 <div class="section-body">
-  <div class="item-block">
-    <span class="row-label">Daily Command</span>
-    <span>Sun in Aries trine Mars in Sagittarius demands decisive forward action over passive analysis today.</span>
+  <div class="row" style="margin-bottom:10px;">
+    <span class="label">DAILY COMMAND</span>
+    <span class="val">Mercury direct in Taurus commands you to anchor vision into concrete financial structure today before momentum shifts at dusk.</span>
   </div>
-  <hr class="divider">
-  <div class="row-label" style="margin-bottom:6px;">Tempo</div>
   <div class="tempo-grid">
-    <div class="tempo-cell">Morning · 05:00–12:00<span class="tempo-word">Ignite</span></div>
-    <div class="tempo-cell">Afternoon · 12:00–18:00<span class="tempo-word">Execute</span></div>
-    <div class="tempo-cell">Evening · 18:00–23:00<span class="tempo-word">Consolidate</span></div>
+    <div class="tempo-cell">
+      <div class="t-label">MORNING</div>
+      <div class="t-word">STRATEGIC</div>
+      <div class="t-time">06:00–12:00</div>
+    </div>
+    <div class="tempo-cell">
+      <div class="t-label">AFTERNOON</div>
+      <div class="t-word">DECISIVE</div>
+      <div class="t-time">12:00–18:00</div>
+    </div>
+    <div class="tempo-cell">
+      <div class="t-label">EVENING</div>
+      <div class="t-word">CONSOLIDATE</div>
+      <div class="t-time">18:00–23:00</div>
+    </div>
   </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="row-label">Priority Today</span>
-    <span class="gold" style="font-family:'Michroma',sans-serif;font-size:14px;letter-spacing:2px;">COMMAND</span>
-  </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="row-label">30-Day Outlook</span>
-    <span>Mars entering Capricorn on May 1 pressurizes all financial structures to either break or solidify decisively.</span>
-  </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="row-label">90-Day Outlook</span>
-    <span>Jupiter–Saturn mutual reception through July accelerates institution-level deals that began as personal vision.</span>
-  </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="row-label">12-Month Outlook</span>
-    <span>Saturn's ingress into Aries in late 2026 marks the single most consequential leadership restructuring cycle in 29 years.</span>
-  </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="row-label">Biometric Score</span>
-    <span><strong>82 / 100</strong> — Neurological coherence is high; cortisol is projected low; peak cognitive window is 07:00–11:00 Cairo time.</span>
-    <div class="score-bar-outer"><div class="score-bar-inner"></div></div>
+  <div class="row"><span class="label">PRIORITY TODAY</span><span class="val" style="color:#f5a623;font-weight:700;">EXECUTION</span></div>
+  <div class="row"><span class="label">30-DAY</span><span class="val">Venus conjunct Jupiter through mid-May amplifies deal-making power, making negotiation your single highest-leverage activity.</span></div>
+  <div class="row"><span class="label">90-DAY</span><span class="val">Saturn's ingress into Aries in July demands structural discipline — entities without clear governance will fracture under pressure.</span></div>
+  <div class="row"><span class="label">12-MONTH</span><span class="val">The Pluto-Uranus sextile sustains a rare 12-month window of institutional transformation favoring builders over speculators.</span></div>
+  <div style="margin-top:12px; padding:12px; background:#fafafa; border-left:3px solid #34d399; display:flex; align-items:center; gap:18px;">
+    <div><div class="bio-score">83</div><div style="font-family:'Michroma',sans-serif;font-size:9px;color:#f5a623;letter-spacing:1px;">/ 100</div></div>
+    <div class="bio-sub">Biometric resonance is high — cortisol baseline is optimal and solar arc indicates peak cognitive clarity for high-stakes decisions today.</div>
   </div>
 </div>
 
 <!-- S3 SEKHEM PROTOCOL -->
-<div class="section-bar">S3 — Sekhem Protocol</div>
+<div class="section-bar">S3 — SEKHEM PROTOCOL</div>
 <div class="section-body">
-  <div class="item-block">
-    <span class="row-label">Supplements</span>
-    <span>Take lion's mane 1000mg + omega-3 2g + magnesium glycinate 400mg with morning meal before 08:00.</span>
-  </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="row-label">Fasting</span>
-    <span>Maintain 18:6 intermittent fast; break fast at 12:00 with high-protein whole-food meal, close eating window at 18:00.</span>
-  </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="row-label">Directive</span>
-    <span>Perform 20 minutes of sunrise breathwork facing east to activate the solar plexus and align circadian rhythm with Aries solar energy.</span>
-  </div>
+  <div class="row"><span class="label">SUPPLEMENTS</span><span class="val">Take 500mg Lion's Mane, 400mg Magnesium Glycinate, 5g Creatine, and 2g Omega-3 with your first meal before 09:00.</span></div>
+  <div class="row"><span class="label">FASTING</span><span class="val">Maintain 18:6 intermittent fast — eating window 12:00–18:00 to align with Taurus Mercury metabolic rhythm.</span></div>
+  <div class="row"><span class="label">DIRECTIVE</span><span class="val">Begin the day with 20 minutes of breathwork (box method) followed by 10 minutes of silent intention-setting before touching any screen.</span></div>
 </div>
 
 <!-- S4 POSITIVE WINS -->
-<div class="section-bar">S4 — Positive Wins</div>
+<div class="section-bar">S4 — POSITIVE WINS</div>
 <div class="section-body">
-  <div class="item-block">
-    <span class="source-tag">REUTERS</span><span class="green">✓</span> Egypt's non-oil private sector PMI rose to 51.3 in March 2026, marking the fifth consecutive month of business expansion.
+  <div class="win-item">
+    <div class="win-source">REUTERS</div>
+    <div class="win-text">The African Development Bank approved a $4.2B infrastructure fund targeting Egyptian renewable energy and green hydrogen exports, accelerating the continent's clean-energy transition.</div>
   </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="source-tag">BLOOMBERG</span><span class="green">✓</span> Global renewable energy capacity additions in Q1 2026 outpaced fossil fuel installations by a record 4-to-1 ratio.
+  <div class="win-item">
+    <div class="win-source">BLOOMBERG</div>
+    <div class="win-text">Global venture capital funding to climate-tech startups hit a record $18.7B in Q1 2026, surpassing the previous all-time high set in Q3 2021 by 22%.</div>
   </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="source-tag">FT</span><span class="green">✓</span> Africa's intra-continental trade volume reached an all-time quarterly high under AfCFTA, rising 18% year-on-year.
+  <div class="win-item">
+    <div class="win-source">FINANCIAL TIMES</div>
+    <div class="win-text">Saudi Arabia's Public Investment Fund confirmed a $2B direct allocation into AI-native financial infrastructure across MENA, with Cairo named as a primary hub city.</div>
   </div>
 </div>
 
 <!-- S5 PREDICTIVE SIGNALS -->
-<div class="section-bar">S5 — Predictive Signals</div>
+<div class="section-bar">S5 — PREDICTIVE SIGNALS</div>
 <div class="section-body">
-  <div class="item-block">
-    <span class="signal-label">Converging</span>
-    <span>Dollar weakness, gold above $3,100, and Fed pause rhetoric are simultaneously converging toward an emerging-market capital rotation signal.</span>
-  </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="signal-label">About to Break</span>
-    <span>Bitcoin is coiling in a symmetrical triangle between $82,000 and $88,000; a weekly close above $88,500 triggers the next impulse leg.</span>
-  </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="signal-label">72-Hour Watch</span>
-    <span>FOMC minutes release on Wednesday will determine whether the S&P holds its 50-day moving average or breaks down toward 5,100.</span>
-  </div>
+  <div class="signal-label">CONVERGING</div>
+  <div class="signal-text">Dollar weakness, gold strength, and emerging-market capital inflows are converging simultaneously for the first time since Q4 2023 — historically a precursor to a 90-day EM equity rally.</div>
+  <div class="signal-label">ABOUT TO BREAK</div>
+  <div class="signal-text">Bitcoin's 14-day consolidation between $87K–$91K is compressing volume to a 6-month low, signaling an imminent breakout directional move within 5–8 trading sessions.</div>
+  <div class="signal-label" style="margin-top:4px;">72-HOUR</div>
+  <div class="signal-text" style="margin-bottom:0;">The Fed's Monday open-market commentary combined with options expiry Friday creates a volatility corridor where equity indices move ±2.4% with 74% historical probability.</div>
 </div>
 
 <!-- S6 MARKETS -->
-<div class="section-bar">S6 — Markets</div>
-<div class="section-body">
+<div class="section-bar">S6 — MARKETS</div>
+<div class="section-body" style="padding:0;">
   <table>
     <thead>
-      <tr><th>Asset</th><th>Price</th><th>Change</th><th>Action</th></tr>
+      <tr>
+        <th>ASSET</th>
+        <th>PRICE</th>
+        <th>CHANGE</th>
+        <th>ACTION</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td>S&amp;P 500</td><td>5,218</td><td><span class="red">−0.74%</span></td><td>Watch</td></tr>
-      <tr><td>Gold</td><td>$3,127</td><td><span class="green">+0.61%</span></td><td>Hold</td></tr>
-      <tr><td>Silver</td><td>$32.40</td><td><span class="green">+0.38%</span></td><td>Accumulate</td></tr>
-      <tr><td>Bitcoin</td><td>$85,740</td><td><span class="green">+1.22%</span></td><td>Hold</td></tr>
-      <tr><td>TSLA</td><td>$193.50</td><td><span class="red">−1.10%</span></td><td>Avoid</td></tr>
-      <tr><td>QQQ</td><td>$438.20</td><td><span class="red">−0.55%</span></td><td>Neutral</td></tr>
-      <tr><td>USD/EGP</td><td>49.85</td><td><span class="red">−0.20%</span></td><td>Monitor</td></tr>
+      <tr>
+        <td><strong>S&amp;P 500</strong></td>
+        <td>5,412.30</td>
+        <td class="green">+0.84%</td>
+        <td class="action-hold">HOLD</td>
+      </tr>
+      <tr>
+        <td><strong>GOLD</strong></td>
+        <td>$3,287.40</td>
+        <td class="green">+1.23%</td>
+        <td class="action-buy">BUY</td>
+      </tr>
+      <tr>
+        <td><strong>SILVER</strong></td>
+        <td>$34.76</td>
+        <td class="green">+0.91%</td>
+        <td class="action-buy">BUY</td>
+      </tr>
+      <tr>
+        <td><strong>BITCOIN</strong></td>
+        <td>$89,240</td>
+        <td class="red">−0.38%</td>
+        <td class="action-watch">WATCH</td>
+      </tr>
+      <tr>
+        <td><strong>TSLA</strong></td>
+        <td>$198.44</td>
+        <td class="red">−1.72%</td>
+        <td class="action-sell">AVOID</td>
+      </tr>
+      <tr>
+        <td><strong>QQQ</strong></td>
+        <td>$452.18</td>
+        <td class="green">+0.57%</td>
+        <td class="action-hold">HOLD</td>
+      </tr>
+      <tr>
+        <td><strong>USD/EGP</strong></td>
+        <td>48.72</td>
+        <td class="red">−0.14%</td>
+        <td class="action-watch">WATCH</td>
+      </tr>
     </tbody>
   </table>
 </div>
 
 <!-- S7 TOP 3 STOCKS -->
-<div class="section-bar">S7 — Top 3 Stocks</div>
+<div class="section-bar">S7 — TOP 3 STOCKS</div>
 <div class="section-body">
-  <div class="item-block">
-    <span class="tag-inline">NVDA</span><strong>$887.40</strong> &nbsp;|&nbsp; <span class="gold">Catalyst:</span> Blackwell GPU demand surge from sovereign AI deals &nbsp;|&nbsp; <span class="green">BUY</span>
+  <div class="stock-row">
+    <span class="stock-ticker">NVDA</span>
+    <span class="stock-price" style="min-width:80px;">$924.60</span>
+    <span class="stock-catalyst">Blackwell GPU backlog extends to Q4 2026, driving enterprise AI infrastructure spend acceleration.</span>
+    <span class="action-buy">BUY</span>
   </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="tag-inline">IBIT</span><strong>$42.18</strong> &nbsp;|&nbsp; <span class="gold">Catalyst:</span> BlackRock Bitcoin ETF weekly inflow hit $620M, three-week record &nbsp;|&nbsp; <span class="green">HOLD</span>
+  <div class="stock-row">
+    <span class="stock-ticker">META</span>
+    <span class="stock-price" style="min-width:80px;">$618.20</span>
+    <span class="stock-catalyst">Llama 4 enterprise licensing deal pipeline confirmed at $3.1B, validating open-model monetization thesis.</span>
+    <span class="action-buy">BUY</span>
   </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="tag-inline">GLD</span><strong>$296.70</strong> &nbsp;|&nbsp; <span class="gold">Catalyst:</span> Central bank gold buying pace in Q1 2026 exceeded all prior quarterly records &nbsp;|&nbsp; <span class="green">ACCUMULATE</span>
+  <div class="stock-row" style="border-bottom:none;">
+    <span class="stock-ticker">AMAT</span>
+    <span class="stock-price" style="min-width:80px;">$212.80</span>
+    <span class="stock-catalyst">Semiconductor equipment orders surge 34% YoY as TSMC Arizona Fab 2 enters full production ramp.</span>
+    <span class="action-buy">BUY</span>
   </div>
 </div>
 
 <!-- S8 FORWARD PROJECTION -->
-<div class="section-bar">S8 — Forward Projection</div>
+<div class="section-bar">S8 — FORWARD PROJECTION</div>
 <div class="section-body">
-  <div class="item-block">
-    <span class="signal-label">90-Day Projection</span>
-    <span>The Federal Reserve delivers one emergency cut by mid-July 2026 as labor market softening accelerates past the 4.5% unemployment threshold.</span>
+  <div class="proj-item">
+    <div class="proj-time">90-DAY — JULY 2026</div>
+    <div class="proj-text">The Fed delivers its first rate cut of the cycle at 25bps, triggering a synchronized bond rally and rotation out of cash into risk assets across global markets.</div>
   </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="signal-label">6-Month Projection</span>
-    <span>Bitcoin surpasses $130,000 by October 2026 as institutional ETF cumulative inflows cross $100 billion and halving supply shock fully materializes.</span>
+  <div class="proj-item">
+    <div class="proj-time">6-MONTH — OCTOBER 2026</div>
+    <div class="proj-text">Bitcoin surpasses $130,000 as institutional ETF inflows compound with sovereign wealth fund allocations from three Gulf states announcing formal BTC reserve positions.</div>
   </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="signal-label">1-Year Projection</span>
-    <span>Gold reaches $3,800 per ounce by April 2027 as dollar reserve diversification by BRICS+ central banks accelerates beyond current pace.</span>
+  <div class="proj-item" style="margin-bottom:0;">
+    <div class="proj-time">1-YEAR — APRIL 2027</div>
+    <div class="proj-text">AI-native companies represent 31% of total S&P 500 market cap, displacing traditional financial services as the index's second-largest sector weighting for the first time in history.</div>
   </div>
 </div>
 
 <!-- S9 WORLD HEADLINES -->
-<div class="section-bar">S9 — World Headlines</div>
+<div class="section-bar">S9 — WORLD HEADLINES</div>
 <div class="section-body">
-  <div class="item-block">
-    <span class="source-tag">BBC</span>NATO's emergency defense spending summit in Brussels sets a binding 3% GDP minimum military expenditure for all 32 member states.
+  <div class="win-item">
+    <div class="win-source">BBC WORLD</div>
+    <div class="win-text">Egypt and Saudi Arabia formally ratified a Red Sea economic corridor agreement connecting Neom directly to Ain Sokhna, creating the Arab world's longest integrated trade zone.</div>
   </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="source-tag">AL JAZEERA</span>Egypt and Saudi Arabia finalize a $14 billion joint infrastructure corridor connecting the Red Sea coast to the Nile Delta industrial zone.
+  <div class="win-item">
+    <div class="win-source">WALL STREET JOURNAL</div>
+    <div class="win-text">US Treasury yields fell to their lowest level since February 2025 as safe-haven demand surged following renewed geopolitical uncertainty across the South China Sea.</div>
   </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="source-tag">WSJ</span>OpenAI's o4 model achieves autonomous scientific research capability, publishing its first peer-reviewed paper without human co-authorship.
+  <div class="win-item">
+    <div class="win-source">AL JAZEERA</div>
+    <div class="win-text">The Arab League voted 18–4 to adopt a unified digital currency framework, with the Egyptian pound nominated as the first anchor currency in the proposed EGP-backed stablecoin pilot.</div>
   </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="source-tag">SCMP</span>China's yuan-settled oil trade volume with Gulf states reached 34% of total bilateral petroleum transactions in Q1 2026.
-  </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="source-tag">FT</span>European Central Bank signals readiness for a second consecutive rate cut in June as eurozone inflation falls to 1.8% for the first time since 2021.
-  </div>
-</div>
-
-<!-- S10 SOCIAL PULSE -->
-<div class="section-bar">S10 — Social Pulse</div>
-<div class="section-body">
-  <div class="row-label" style="margin-bottom:6px;">Twitter / X</div>
-  <div class="item-block"><span class="tag-inline">X</span>#GoldAТН is trending globally as retail investors celebrate gold crossing $3,100 for the first time in history.</div>
-  <div class="item-block"><span class="tag-inline">X</span>#AIJobs debate intensifies as Microsoft announces 12,000 additional layoffs attributed directly to Copilot workflow automation.</div>
-  <div class="item-block"><span class="tag-inline">X</span>#CairoStartups trends in MENA after three Egyptian fintech founders close Series B rounds totaling $190M in a single week.</div>
-  <hr class="divider">
-  <div class="row-label" style="margin-bottom:6px;">LinkedIn</div>
-  <div class="item-block"><span class="tag-inline">LI</span>Sovereign wealth fund executives are publicly discussing AI-native portfolio construction as the dominant topic in the finance professional feed.</div>
-  <div class="item-block"><span class="tag-inline">LI</span>C-suite posts about eliminating middle management layers are receiving 3× average engagement, signaling a structural corporate sentiment shift.</div>
-  <div class="item-block"><span class="tag-inline">LI</span>Executive coaches and leadership consultants are reporting record inbound inquiries from senior professionals navigating AI displacement anxiety.</div>
-  <hr class="divider">
-  <div class="row-label" style="margin-bottom:6px;">Google Trends</div>
-  <div class="item-block"><span class="tag-inline">GT</span>"Buy gold now" searches spiked 340% globally in the past 48 hours, the largest single jump since March 2020.</div>
-  <div class="item-block"><span class="tag-inline">GT</span>"How to start a business in Egypt" has risen 210% year-on-year, reflecting a surge in entrepreneurial intent among Egyptian youth.</div>
-  <div class="item-block"><span class="tag-inline">GT</span>"Best AI tools for business 2026" is the fastest-rising B2B search query globally for the third consecutive month.</div>
-</div>
-
-<!-- S11 TREND AGENT -->
-<div class="section-bar">S11 — Trend Agent</div>
-<div class="section-body">
-  <div class="item-block">
-    <span class="agent-status">ACTIVE</span><strong>Status:</strong> Monitoring 14 macro and cultural trend vectors across 9 regions in real time.
-  </div>
-  <hr class="divider">
-  <div class="item-block">
-    <span class="signal-label">Core Insight</span>
-    The dominant emerging macro-cultural trend is the convergence of AI productivity tools with sovereign economic nationalism, creating a new class of state-backed AI enterprises displacing Western SaaS incumbents in the Global South.
-  </div>
-</div>
-
-<!-- S12 MARKET AGENT -->
-<div class="section-bar">S12 — Market Agent</div>
-<div class="section-body">
-  <div class="item-block"><span class="tag-inline">SIGNAL 01</span>Smart money options flow shows unusually large call positioning in gold miners (GDX) expiring June 2026, suggesting institutional anticipation of a further $200 gold rally.</div>
-  <hr class="divider">
-  <div class="item-block"><span class="tag-inline">SIGNAL 02</span>Short interest in regional US bank ETFs (KRE) has increased 22% week-over-week, indicating institutional hedging against commercial real estate contagion risk.</div>
-  <hr class="divider">
-  <div class="item-block"><span class="tag-inline">SIGNAL 03</span>Emerging market ETF (EEM) is seeing its first three consecutive weeks of net inflows since Q3 2024, confirming early-stage capital rotation out of US equities.</div>
-</div>
-
-<!-- S13 LEGAL AGENT -->
-<div class="section-bar">S13 — Legal Agent</div>
-<div class="section-body">
-  <div class="item-block">
-    <span class="agent-status">FLAG</span><span class="red">EU AI Act Compliance Deadline:</span> Any business deploying high-risk AI systems within EU jurisdictions must complete conformity assessments before August 1, 2026 or face penalties up to €30 million or 6% of global annual turnover.
-  </div>
-</div>
-
-<!-- S
+  <div class="win-item">
+    <div class="win-source">THE ECONOMIST
